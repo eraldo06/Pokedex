@@ -1,4 +1,4 @@
-import NavBar from "../componetes/NavBar";
+import NavBar from "../componetes/navbar/NavBar";
 
 function Details(){
     return (
