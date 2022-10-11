@@ -1,4 +1,5 @@
 import "./cards.css";
+import "../../pages/home.css"
 
 function Cards(){
     return(

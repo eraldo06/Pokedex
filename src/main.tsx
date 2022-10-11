@@ -8,7 +8,7 @@ import Details from './pages/Details'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <section className='container'>
-      <Home />
+      <Home/>
     </section>
     
   </React.StrictMode>
