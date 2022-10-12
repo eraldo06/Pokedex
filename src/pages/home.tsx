@@ -10,6 +10,10 @@ function Home() {
 
       <div className="list">
       <Cards/>    
+      <Cards/>    
+      <Cards/>    
+        
+
         
          
       </div>
