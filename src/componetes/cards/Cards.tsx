@@ -1,19 +1,25 @@
 import "./cards.css";
 import "../../pages/home.css"
 
-function Cards(){
+type CardPokemonProps = {
+  id: number;
+  name: string;
+}
+
+function Cards(props: CardPokemonProps){
     return(
         <div className="card">
         <div className="info">
-          <span className="info__number">#001</span>
-          <p className="info__name">Bubasauro</p>
+          <span className="info__number">#{props.id.toString().padStart(3, "0")}</span>
+          <p className="info__name">{props.name}</p>
         </div>
         <img
           className="card__img"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-          alt=""
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.id}.png`}
+          alt={props.name}
         />
       </div>
+      
     )
 }
 

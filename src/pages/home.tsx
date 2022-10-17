@@ -10,7 +10,7 @@ function Home() {
 
       <div className="list">
       
-      <Cards/>   
+      <Cards id={15} name="burra"/>   
         
          
       </div>
