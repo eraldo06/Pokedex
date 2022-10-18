@@ -8,6 +8,7 @@ type CardPokemonProps = {
 
 function Cards(props: CardPokemonProps){
     return(
+      <a href={`/details/${props.id}`}>
         <div className="card">
         <div className="info">
           <span className="info__number">#{props.id.toString().padStart(3, "0")}</span>
@@ -19,6 +20,7 @@ function Cards(props: CardPokemonProps){
           alt={props.name}
         />
       </div>
+      </a>
       
     )
 }

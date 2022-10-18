@@ -13,7 +13,7 @@ function Home() {
       <h1 className="title">Encontre todos os pokémons em um só lugar</h1>
 
       <div className="list">
-        {pokemons.slice(1,10).map((pokemon, index) => {
+        {pokemons.slice(1,120).map((pokemon, index) => {
           // a key é o proprio react q requer algum indentificador unico para cada Card
         return  <Cards key={index} id={pokemon.id} name={pokemon.name}/> ;
         })}
