@@ -1,4 +1,5 @@
 import "./NavBar.css"
+import {Link} from "react-router-dom";
 
 type NavBarProps = {
     hasGoBack?: boolean;
@@ -7,10 +8,11 @@ type NavBarProps = {
 function NavBar(props: NavBarProps){
     return(
         <nav className="mav">
-            <a href="" className="brand">Pokédex</a>
+            <Link to="/" className="brand">Pokédex</Link>
 
             {props.hasGoBack && ( 
-            <a href="" className="btn-voltar">voltar</a>)}
+            <Link to="/" className="btn-voltar">voltar</Link>
+            )}
         </nav>
     )
 }

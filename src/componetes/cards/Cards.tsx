@@ -1,5 +1,6 @@
 import "./cards.css";
 import "../../pages/home.css"
+import {Link} from "react-router-dom";
 
 type CardPokemonProps = {
   id: number;
@@ -8,7 +9,7 @@ type CardPokemonProps = {
 
 function Cards(props: CardPokemonProps){
     return(
-      <a href={`/details/${props.id}`}>
+      <Link to={`/details/${props.id}`}>
         <div className="card">
         <div className="info">
           <span className="info__number">#{props.id.toString().padStart(3, "0")}</span>
@@ -20,7 +21,7 @@ function Cards(props: CardPokemonProps){
           alt={props.name}
         />
       </div>
-      </a>
+      </Link>
       
     )
 }

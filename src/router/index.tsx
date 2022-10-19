@@ -10,9 +10,9 @@ const router = createBrowserRouter([
         element: <Home />
     },
     {
-        path: "/details/:idPokemon",
-        element: <Details />
+        path: "/details/:id",
+        element: <Details />,
     }
-])
+]);
 
 export default router;
