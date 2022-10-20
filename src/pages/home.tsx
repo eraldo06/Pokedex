@@ -9,8 +9,12 @@ function Home() {
   // estou dizendo que só quero a propiedade "pokemons"
   const {pokemons} = pokemonList;
 
+  async function getPokemonData(){
+    const {data} = await api.get("/pokemon?limit=151")
+  }
+
   useEffect(()=>{
-    const dados = api.get("/pokemon?limit=151")
+    getPokemonData();
   },[])
 
   return (
