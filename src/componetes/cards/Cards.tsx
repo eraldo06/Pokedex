@@ -9,7 +9,7 @@ type PokemonTypeProps ={
   }
 }
 
-type CardPokemonProps = {
+export type CardPokemonProps = {
   id: number;
   name: string;
   types: Array<PokemonTypeProps>;
