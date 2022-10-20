@@ -1,6 +1,7 @@
 import "./cards.css";
 import "../../pages/home.css"
 import {Link} from "react-router-dom";
+import Badge from "../badge/Badge";
 
 type PokemonTypeProps ={
   type:{
@@ -23,8 +24,10 @@ function Cards(props: CardPokemonProps){
           <span className="info__number">#{props.id.toString().padStart(3, "0")}</span>
           <p className="info__name">{props.name}</p>
 
-          <p>{props.types[0].type.name}</p>
-         
+          {props.types.map((item, index)=>{
+            return <Badge key={index} name={item.type.name}/>;
+          })}
+       
         </div>
         <img
           className="card__img"
