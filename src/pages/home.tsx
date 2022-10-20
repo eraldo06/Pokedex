@@ -2,10 +2,16 @@ import Cards from "../componetes/cards/Cards";
 import NavBar from "../componetes/navbar/NavBar";
 import "./home.css";
 import pokemonList from "../assets/pokemon.json"
+import { useEffect } from "react";
+import api from "../services/api";
 
 function Home() {
   // estou dizendo que só quero a propiedade "pokemons"
   const {pokemons} = pokemonList;
+
+  useEffect(()=>{
+    const dados = api.get("/pokemon?limit=151")
+  },[])
 
   return (
     <>
