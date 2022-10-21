@@ -8,7 +8,7 @@ type BadgeProps = {
 
 function Badge(props: BadgeProps){
     return(
-     <Container bgColor={props.name.toLowerCase()}>
+     <Container className={"type--" + props.name.toLowerCase()}>
      {props.name}
      </Container>
      )
