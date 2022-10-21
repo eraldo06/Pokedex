@@ -38,7 +38,7 @@ function Home() {
   },[])
 
   if (isLoading){
-    return null;
+    return <p>carregando</p>;
   }
 
   return (
