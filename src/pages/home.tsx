@@ -49,7 +49,7 @@ function Home() {
 
      <Input 
         type="text" 
-        placeholder="Buscar por Nome"
+        placeholder="Buscar por Nome ou ID"
         value={textoBusca}
         onChange={(event)=> setTextoBusca(event.target.value)}
         />
@@ -57,7 +57,10 @@ function Home() {
       <List>
         {pokemonList
         // input pesquisa pokemon
-        .filter((pokemon)=> pokemon.name.includes(textoBusca))
+        // includes = se em qualquer lugar do texto tiver essa string apareça
+        .filter((pokemon)=> pokemon.name.includes(textoBusca) ||
+        String(pokemon.id)==textoBusca
+        )
         .map((pokemon, index) => {
           // a key é o proprio react q requer algum indentificador unico para cada Card
         return ( 
