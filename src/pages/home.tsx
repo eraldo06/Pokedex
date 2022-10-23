@@ -11,6 +11,7 @@ function Home() {
 
   const [isLoading, setIsLoading] = useState(true)
   const [pokemonList, setPokemonList] = useState<CardPokemonProps[]>([]);
+  const [textoBusca, setTextoBusca] = useState('')
    
 
   async function getPokemonData(){
@@ -46,10 +47,18 @@ function Home() {
       <NavBar />
       <Title>Encontre todos os pokémons em um só lugar</Title>
 
-     <Input type="text" placeholder="Buscar por Nome"/>
+     <Input 
+        type="text" 
+        placeholder="Buscar por Nome"
+        value={textoBusca}
+        onChange={(event)=> setTextoBusca(event.target.value)}
+        />
 
       <List>
-        {pokemonList.map((pokemon, index) => {
+        {pokemonList
+        // input procurando um pokemon
+        .filter((pokemon)=> pokemon.name.includes(textoBusca))
+        .map((pokemon, index) => {
           // a key é o proprio react q requer algum indentificador unico para cada Card
         return ( 
         <Card

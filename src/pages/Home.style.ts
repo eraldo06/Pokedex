@@ -6,7 +6,7 @@ export const Title = styled.h1`
     line-height: 62px;
     color: #17171b;
     max-width: 700px;
-    margin: 160px 0px;
+    margin: 160px 0px 80px;
 
 `;
 
@@ -19,4 +19,8 @@ export const List = styled.div`
 
 export const Input = styled.input`
     width: 100%;
+    font-size:  1.2rem;
+    color:#17171b;
+    padding: 0.5rem 1rem;
+    margin-bottom: 80px;
 `;
