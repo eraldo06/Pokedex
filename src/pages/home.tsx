@@ -56,7 +56,7 @@ function Home() {
 
       <List>
         {pokemonList
-        // input procurando um pokemon
+        // input pesquisa pokemon
         .filter((pokemon)=> pokemon.name.includes(textoBusca))
         .map((pokemon, index) => {
           // a key é o proprio react q requer algum indentificador unico para cada Card
