@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Card, { CardPokemonProps} from "../componetes/cards/Cards";
 import NavBar from "../componetes/navbar/NavBar";
-import "./home.css";
 import api from "../services/api";
+import {Title, List, Input} from "./Home.style"
 
 
 
@@ -44,9 +44,11 @@ function Home() {
   return (
     <>
       <NavBar />
-      <h1 className="title">Encontre todos os pokémons em um só lugar</h1>
+      <Title>Encontre todos os pokémons em um só lugar</Title>
 
-      <div className="list">
+     <Input type="text" placeholder="Buscar por Nome"/>
+
+      <List>
         {pokemonList.map((pokemon, index) => {
           // a key é o proprio react q requer algum indentificador unico para cada Card
         return ( 
@@ -56,10 +58,7 @@ function Home() {
           name={pokemon.name} 
           types={pokemon.types} />)
         })}
-    
-        
-         
-      </div>
+      </List>
     </>
   );
 }

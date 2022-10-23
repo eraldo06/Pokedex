@@ -1,5 +1,4 @@
 import "./cards.css";
-import "../../pages/home.css"
 import {Link} from "react-router-dom";
 import Badge from "../badge/Badge";
 
