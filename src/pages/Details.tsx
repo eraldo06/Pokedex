@@ -12,7 +12,7 @@ import {Container, Imagem, Card, Number, Title} from "./Details.style"
 function Details(){
     // ela vai pegar o id da url
     const {id} = useParams();
-    const 
+    const [isLoading, setIsLoading ] = useState(true);
     const [pokemonData, setPokemonData] = useState<CardPokemonProps>(
         {} as CardPokemonProps
     );
@@ -24,14 +24,18 @@ function Details(){
             id: data.id,
             name: data.name,
             types: data.types,
-        });
+        });  
+
+        setIsLoading(false)
+    }
 
         useEffect(() => {
             GetPokemonData();
         },[]);
+  
+    if (isLoading){
+        return <p>carregando</p>
     }
-
-
 
     return (
         <>
@@ -39,15 +43,17 @@ function Details(){
             {/* se o id da url for igual o id do banco de dados ? faça isso */}
 
             <Container>
-                <Imagem src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}/>
-                <Card>
+                <Imagem src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} alt={pokemonData.name}/>
+
+                <Card
+                    className={`type--${pokemonData.types[0].type.name.toLowerCase()}`}
+                    >
         
                 <Number>#{String(id).toString().padStart(3, "0")}</Number>
                 <Title>{GetPokemonData.name}</Title>
 
-                {pokemonData.types.map((item, index)=>{
-                    return <Badge key={index} name={item.
-                        type.name}/>
+                {pokemonData.types.map((item: any, index: any)=>{
+                    return <Badge key={index} name={item.type.name}/>
                     
                 })}
                 </Card>
